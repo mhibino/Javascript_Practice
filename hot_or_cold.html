@@ -1,0 +1,47 @@
+<script>
+function hotOrCold () {
+	
+	var guess = parseInt(prompt("Guess a number"), 10);
+	var randomNum = Math.floor(Math.random() * 100);
+	
+	function submit(){
+		var response = '';
+		var guessCount = 0;
+	 
+		  if ( guess === randomNum ){
+		    response = 'Wow great guess! You got it on the ' + guessCount + 'try!';
+		  }
+		while (guess !== randomNum ) {
+		  if((guess - randomNum) > -50 || (guess - randomNum) > 50 ){
+		    response = "You are ice cold"
+		    guess = parseInt(prompt( response + "Guess again" + randomNum), 10)
+		    guessCount += 1;
+		  }
+		  else if ((guess - randomNum) > -20 || (guess - randomNum) > 20 ){
+		    response = "You are cold"
+		    guess = parseInt(prompt("Guess again"), 10)
+		    guessCount += 1;
+		  }
+		  else if ((guess - randomNum) > -10 || (guess - randomNum) > 10 ){
+		    response = "You are room temp"
+		    guess = parseInt(prompt("Guess again"), 10)
+		    guessCount += 1;
+		  }
+		  else if ((guess - randomNum) > -5 || (guess - randomNum) > 5 ){
+		    response = "You are hot!"
+		    guess = parseInt(prompt("Guess again"), 10)
+		    guessCount += 1;
+		  } 
+		}
+	}
+
+	submit();
+}
+
+
+
+
+
+
+
+</script>
